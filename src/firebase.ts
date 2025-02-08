@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, setPersistence, browserLocalPersistence, onAuthStateChanged } from "firebase/auth";
+import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,19 +22,10 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 
-// Nastavenie perzistencie
+// Set persistence
 setPersistence(auth, browserLocalPersistence)
   .then(() => {
     console.log('Firebase: Persistence set to LOCAL');
-    
-    // Pridáme globálny auth listener
-    onAuthStateChanged(auth, (user) => {
-      console.log('Firebase: Global auth state changed:', {
-        isUser: !!user,
-        email: user?.email,
-        timestamp: new Date().toISOString()
-      });
-    });
   })
   .catch((error) => {
     console.error('Firebase: Error setting persistence:', error);
@@ -44,3 +35,9 @@ setPersistence(auth, browserLocalPersistence)
 export const isUserLoggedIn = () => {
   return !!auth.currentUser;
 };
+
+// Enable emulator in development
+if (import.meta.env.DEV) {
+  const { connectAuthEmulator } = await import('firebase/auth');
+  connectAuthEmulator(auth, 'http://localhost:9099');
+}
