@@ -1,5 +1,3 @@
-import { AuthModal } from '../components/Auth/AuthModal';
-
 export const Home = () => (
   <div className="landing-page">
     <div className="landing-content">
