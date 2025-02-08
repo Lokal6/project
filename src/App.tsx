@@ -3,6 +3,7 @@ import './App.css'
 import { AuthModal } from './components/Auth/AuthModal'
 import { auth } from './firebase'
 import { User } from 'firebase/auth'
+import { getRedirectResult } from 'firebase/auth'
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -10,6 +11,19 @@ function App() {
 
   useEffect(() => {
     console.log('Setting up auth listener...');
+    
+    // Handler pre redirect prihlásenie
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result) {
+          console.log('Redirect login successful:', result.user.email);
+        }
+      })
+      .catch((error) => {
+        console.error('Redirect error:', error);
+      });
+
+    // Existujúci auth listener
     const unsubscribe = auth.onAuthStateChanged((user) => {
       console.log('Auth state changed:', {
         isUser: !!user,
@@ -21,6 +35,7 @@ function App() {
     }, (error) => {
       console.error('Auth error:', error);
     });
+
     return () => unsubscribe();
   }, []);
 
