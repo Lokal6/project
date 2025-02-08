@@ -9,7 +9,7 @@ export default defineConfig({
     open: true   // automaticky otvorí prehliadač
   },
   build: {
-    outDir: 'build',
+    outDir: 'dist',
     sourcemap: false,
     minify: 'esbuild',
     rollupOptions: {

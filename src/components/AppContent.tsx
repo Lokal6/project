@@ -34,7 +34,7 @@ export const AppContent = () => {
         </nav>
       </header>
 
-      <main>
+      <main className="app-main">
         <Routes>
           <Route path="/" element={!user ? <Home /> : <Dashboard />} />
           <Route path="/dashboard" element={user ? <Dashboard /> : <Home />} />
@@ -46,7 +46,7 @@ export const AppContent = () => {
         <div className="footer-content">
           <div className="footer-section">
             <h4>Links</h4>
-            <Link to="/dashboard">Dashboard</Link>
+            {user && <Link to="/dashboard">Dashboard</Link>}
             <Link to="/about">About</Link>
           </div>
           <div className="footer-section">

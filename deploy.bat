@@ -1,25 +1,31 @@
 @echo off
-setlocal EnableDelayedExpansion
-
-:: Farby
-set "GREEN=[32m"
-set "YELLOW=[33m"
-set "RED=[31m"
-set "NC=[0m"
-
-:: 1. Build
-echo %YELLOW%🔨 Building project...%NC%
-npm run build || (
-    echo %RED%❌ Build failed%NC%
+echo [33m Building project... [0m
+call npm run build
+if errorlevel 1 (
+    echo [31m Build failed! [0m
+    pause
     exit /b 1
 )
 
-:: 2. Deploy
-echo %YELLOW%🚀 Deploying to Firebase...%NC%
-firebase deploy || (
-    echo %RED%❌ Deploy failed%NC%
+echo [33m Checking dist directory... [0m
+if not exist "dist" (
+    echo [31m Build directory 'dist' not found! [0m
+    pause
     exit /b 1
 )
 
-:: 3. Hotovo
-echo %GREEN%✅ Successfully deployed to Firebase!%NC% 
+echo [33m Deploying to Firebase... [0m
+call firebase deploy --only hosting
+if errorlevel 1 (
+    echo [31m Deploy failed! [0m
+    pause
+    exit /b 1
+)
+
+echo [32m Successfully deployed! [0m
+echo.
+echo [33m Your site is live at: [0m
+echo https://projekt-9ef39.web.app/
+echo.
+echo [33m Press any key to close... [0m
+pause >nul 

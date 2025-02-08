@@ -1,8 +1,9 @@
 export const Home = () => (
   <div className="landing-page">
-    <div className="landing-content">
+    <div className="hero">
       <h1>Vitajte v Cursor AI</h1>
-      <p>Pre pokračovanie sa prosím prihláste</p>
+      <p>Modern React + Firebase Application</p>
+      <button className="cta-button">Get Started</button>
     </div>
   </div>
 ); 
