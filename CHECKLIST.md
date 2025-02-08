@@ -1,58 +1,51 @@
-# Cursor AI Project Checklist
+# 🚀 Cursor AI Project - Postup
 
-## Porovnanie Implementácií
+## ✅ Hotové Kroky
 
-### 1. Setup Project Directory
-✅ **Vzor**: `mkdir ~/YOURDIRECTORY`
-✅ **Naša impl.**: `mkdir C:\Users\Peter\project`
-- Rovnaký princíp, len Windows cesta
+### 1️⃣ Príprava Projektu
+- [x] Vytvorený priečinok `C:\Users\Peter\project`
+- [x] Nainštalovaný Node.js
+- [x] Nastavený Git a GitHub
 
-### 2. Node.js a React Setup
-❗ **Vzor**: 
-- Create React App (`npx create-react-app .`)
-- React 18
+### 2️⃣ React Setup
+**Pôvodný plán vs. Naše vylepšené riešenie:**
+- Create React App ➜ Vite (rýchlejší)
+- React 18 ➜ React 19 + TypeScript
+- Basic JS ➜ TypeScript + SWC (lepšia kontrola kódu)
+- Port 3000 ✅ (nastavené)
 
-✨ **Naša impl.**: 
-- Vite (`npm create vite@latest .`)
-- React 19 + TypeScript + SWC
-- **Výhody našej impl.:**
-  - Rýchlejší development server
-  - Modernejší build systém
-  - TypeScript pre lepšiu typovú kontrolu
-  - SWC namiesto Babel = rýchlejšia kompilácia
+### 3️⃣ GitHub Integrácia
+- [x] Repozitár vytvorený
+- [x] Kód nahratý
+- [x] Automatická autentifikácia cez prehliadač
 
-### 3. GitHub Pripojenie
-✅ **Vzor**: 
-- Personal Access Token
-- Manual README creation
+## 🏗️ Práve Pracujeme Na
 
-✨ **Naša impl.**: 
-- Browser-based auth
-- GitHub CLI
-- **Jednoduchšie a bezpečnejšie**
+### 4️⃣ Spustenie Aplikácie
+- [x] Vite config nastavený
+- [ ] Server spustený
+- [ ] Aplikácia beží v prehliadači
+- [ ] Základná štruktúra hotová
 
-## Zostávajúce Úlohy
+## 📋 Zostávajúce Úlohy
 
-### 4. React Aplikácia
-- [ ] Spustený vývojový server
-- [ ] Overená funkčnosť na localhost (port 5173 namiesto 3000)
-- [ ] Základná štruktúra aplikácie
+### 5️⃣ Firebase
+- [ ] Inštalácia Firebase
+- [ ] Vytvorenie projektu
+- [ ] Konfigurácia
+- [ ] Prepojenie s React
 
-### 5. Firebase Setup
-- [ ] Nainštalovaný Firebase
-- [ ] Vytvorený Firebase projekt
-- [ ] Pridaná web aplikácia do Firebase
-- [ ] Vytvorený firebase.js konfiguračný súbor
-- [ ] Nakonfigurovaný Firebase v projekte
-
-### 6. Firebase Hosting
-- [ ] Nainštalovaný Firebase CLI
-- [ ] Prihlásenie do Firebase
-- [ ] Inicializovaný Firebase v projekte
+### 6️⃣ Nasadenie
+- [ ] Firebase CLI
 - [ ] Build aplikácie
-- [ ] Nasadenie na Firebase Hosting
+- [ ] Deploy na hosting
 
-### 7. Finálne Overenie
-- [ ] Overená funkčnosť na produkčnej URL
-- [ ] Skontrolovaná Firebase konfigurácia
-- [ ] Otestované všetky funkcionality 
+### 7️⃣ Testovanie
+- [ ] Lokálne testy
+- [ ] Produkčné testy
+- [ ] Finálna kontrola
+
+## 📝 Poznámky
+- Používame modernejší stack než v tutoriáli
+- Vylepšená vývojárska skúsenosť (DX)
+- Lepšia typová bezpečnosť 
