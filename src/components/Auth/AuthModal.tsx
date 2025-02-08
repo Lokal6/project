@@ -87,7 +87,11 @@ export const AuthModal = () => {
 
             <div className="modal-body">
               <button className="social-button google" onClick={handleGoogleLogin}>
-                <img src="/src/assets/google.png" alt="" />
+                <img 
+                  src="/google.png"
+                  alt="Google"
+                  className="google-icon"
+                />
                 Pokračovať s Google
               </button>
 
