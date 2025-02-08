@@ -40,3 +40,43 @@
 .read-the-docs {
   color: #888;
 }
+
+.app {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background-color: #282c34;
+  padding: 2rem;
+  color: white;
+}
+
+.app-main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.features {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.app-footer {
+  padding: 1rem;
+  background-color: #f5f5f5;
+}

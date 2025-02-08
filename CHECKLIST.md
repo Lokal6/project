@@ -28,11 +28,11 @@
 
 ## 🏗️ Práve Pracujeme Na
 
-### 4️⃣ Spustenie Aplikácie
+### 4️⃣ Spustenie Aplikácie [75%]
 - [x] Vite config nastavený
-- [ ] Server spustený
-- [ ] Aplikácia beží v prehliadači
-- [ ] Základná štruktúra hotová
+- [x] Server spustený
+- [x] Základná štartová stránka vytvorená
+- [ ] Kompletná UI štruktúra
 
 ## 📋 Zostávajúce Úlohy
 
