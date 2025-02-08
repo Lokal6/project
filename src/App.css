@@ -179,10 +179,13 @@
   color: #ccc;
   text-decoration: none;
   transition: color 0.3s;
+  padding: 0.5rem;
+  border-radius: 4px;
 }
 
 .footer-section a:hover {
   color: white;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom {

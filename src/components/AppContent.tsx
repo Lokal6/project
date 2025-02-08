@@ -43,7 +43,20 @@ export const AppContent = () => {
       </main>
 
       <footer className="app-footer">
-        {/* ... footer content ... */}
+        <div className="footer-content">
+          <div className="footer-section">
+            <h4>Links</h4>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/about">About</Link>
+          </div>
+          <div className="footer-section">
+            <h4>Connect</h4>
+            <a href="https://github.com/Lokal6/project" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>Built with modern web technologies</p>
+        </div>
       </footer>
     </div>
   );
