@@ -6,10 +6,12 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-# Error handling
-set -e  # Script sa zastaví pri chybe
+# Prejdi do root priečinka projektu
+cd "$(dirname "$0")/.." || exit 1
 
-# Funkcia pre error handling
+# Error handling
+set -e
+
 handle_error() {
     echo -e "${RED}❌ Chyba: $1${NC}"
     exit 1
