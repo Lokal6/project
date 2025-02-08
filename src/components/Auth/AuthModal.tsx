@@ -4,7 +4,8 @@ import {
   signInWithRedirect,
   GoogleAuthProvider, 
   signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword 
+  createUserWithEmailAndPassword,
+  onAuthStateChanged
 } from 'firebase/auth';
 import './Auth.css';
 
@@ -16,6 +17,7 @@ export const AuthModal = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleClose = () => {
     setView('closed');
@@ -71,8 +73,9 @@ export const AuthModal = () => {
 
   // Pridáme sledovanie auth stavu
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       console.log('Auth state in modal:', user?.email);
+      setIsAuthenticated(!!user);
       if (user) {
         handleClose(); // Zatvoríme modálne okno ak je užívateľ prihlásený
       }
@@ -85,6 +88,7 @@ export const AuthModal = () => {
   const handleSignOut = async () => {
     try {
       await auth.signOut();
+      setIsAuthenticated(false);
       console.log('User signed out');
     } catch (error) {
       console.error('Sign out error:', error);
@@ -100,13 +104,13 @@ export const AuthModal = () => {
 
   return (
     <>
-      {!auth.currentUser ? (
+      {!isAuthenticated ? (
         <button className="auth-login-button" onClick={() => setView('login')}>
           Prihlásiť sa
         </button>
       ) : (
         <button className="auth-login-button" onClick={handleSignOut}>
-          Odhlásiť sa ({auth.currentUser.email})
+          Odhlásiť sa ({auth.currentUser?.email})
         </button>
       )}
 

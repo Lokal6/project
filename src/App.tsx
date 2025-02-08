@@ -15,12 +15,12 @@ function App() {
   useEffect(() => {
     console.log('Setting up auth listener...');
     
-    // Ponecháme len auth listener
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      console.log('Auth state changed:', {
+      console.log('Auth state in App:', {
         isUser: !!user,
         email: user?.email,
-        uid: user?.uid
+        uid: user?.uid,
+        timestamp: new Date().toISOString()
       });
       setUser(user);
       setLoading(false);
