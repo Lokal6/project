@@ -34,6 +34,13 @@
 - [x] Loading stavy
 - [x] Auth state management
 
+### 7️⃣ DevOps Vylepšenia [100%]
+- [x] Automatizovaný git workflow
+  - ✅ Vlastný git-push.bat script
+  - ✅ Error handling
+  - ✅ Farebné výstupy
+  - ✅ User-friendly rozhranie
+
 ## 🏗️ V Procese
 
 ### 4️⃣ Užívateľské Dáta [0%]
@@ -61,4 +68,5 @@
 - Modernejší tech stack (Vite, TS, SWC)
 - Lepšia typová bezpečnosť
 - Vylepšená UX/UI
-- Robustnejšia autentifikácia 
+- Robustnejšia autentifikácia
+- Automatizované git operácie 
