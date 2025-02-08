@@ -1,32 +1,41 @@
 import { db } from '../firebase';
-import { collection, doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
-import type { User } from '../types/user';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 
-const USERS_COLLECTION = 'users';
+interface User {
+  uid: string;
+  email: string | null;
+  displayName: string | null;
+  photoURL: string | null;
+  lastLogin: Date;
+}
 
 export const userService = {
   // Vytvorenie/aktualizácia používateľa pri prihlásení
-  async saveUser(user: User) {
-    const userRef = doc(db, USERS_COLLECTION, user.uid);
+  async saveUser(userData: User) {
     try {
+      const userRef = doc(db, 'users', userData.uid);
       await setDoc(userRef, {
-        ...user,
+        ...userData,
         lastLogin: new Date()
       }, { merge: true });
-      console.log('Používateľ uložený:', user.email);
+      return true;
     } catch (error) {
-      console.error('Chyba pri ukladaní používateľa:', error);
+      console.error('Error saving user:', error);
+      return false;
     }
   },
 
   // Získanie údajov o používateľovi
   async getUser(uid: string) {
-    const userRef = doc(db, USERS_COLLECTION, uid);
     try {
+      const userRef = doc(db, 'users', uid);
       const userSnap = await getDoc(userRef);
-      return userSnap.exists() ? userSnap.data() as User : null;
+      if (userSnap.exists()) {
+        return userSnap.data() as User;
+      }
+      return null;
     } catch (error) {
-      console.error('Chyba pri získavaní používateľa:', error);
+      console.error('Error getting user:', error);
       return null;
     }
   }
