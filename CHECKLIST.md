@@ -39,13 +39,13 @@
   - About sekcia
   - Footer s odkazmi
 
-## 📋 Zostávajúce Úlohy
-
 ### 5️⃣ Firebase Setup [33%]
-- [ ] Inštalácia Firebase
-- [ ] Vytvorenie projektu
-- [ ] Konfigurácia
-- [ ] Prepojenie s React
+- [x] Firebase SDK nainštalovaný
+- [ ] Firebase projekt
+- [ ] Autentifikácia
+- [ ] Databáza
+
+## 📋 Zostávajúce Úlohy
 
 ### 6️⃣ Nasadenie
 - [ ] Firebase CLI
@@ -61,3 +61,8 @@
 - Používame modernejší stack než v tutoriáli
 - Vylepšená vývojárska skúsenosť (DX)
 - Lepšia typová bezpečnosť 
+
+## 📝 Ďalšie Kroky
+1. Dokončiť Firebase setup
+2. Pridať autentifikáciu
+3. Implementovať databázu 
