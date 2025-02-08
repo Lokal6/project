@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "git": "\"C:\\Program Files\\Git\\bin\\bash.exe\" ./scripts/git-push.sh"
+    "git": "\"C:\\Program Files\\Git\\bin\\bash.exe\" ./scripts/git-push.sh",
+    "deploy": "deploy.bat"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
