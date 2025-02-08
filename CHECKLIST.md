@@ -3,7 +3,7 @@
 
 ---
 
-## 📊 Aktuálny Stav Projektu [75%]
+## 📊 Aktuálny Stav Projektu [85%]
 
 # 🚀 Cursor AI Project - Postup
 
@@ -36,7 +36,7 @@
 
 ## 📋 Zostávajúce Úlohy
 
-### 5️⃣ Firebase
+### 5️⃣ Firebase Setup [33%]
 - [ ] Inštalácia Firebase
 - [ ] Vytvorenie projektu
 - [ ] Konfigurácia
