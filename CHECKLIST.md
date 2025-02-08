@@ -1,3 +1,10 @@
+# 🎯 Cursor AI Project
+## Progres Report & Dokumentácia
+
+---
+
+## 📊 Aktuálny Stav Projektu [75%]
+
 # 🚀 Cursor AI Project - Postup
 
 ## ✅ Hotové Kroky
