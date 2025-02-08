@@ -3,7 +3,7 @@
 
 ---
 
-## 📊 Aktuálny Stav Projektu [85%]
+## 📊 Aktuálny Stav Projektu [87%]
 
 # 🚀 Cursor AI Project - Postup
 
@@ -39,11 +39,17 @@
   - About sekcia
   - Footer s odkazmi
 
-### 5️⃣ Firebase Setup [33%]
+### 5️⃣ Firebase Setup [85%]
 - [x] Firebase SDK nainštalovaný
-- [ ] Firebase projekt
+- [x] Firebase projekt vytvorený
+- [x] Firebase konfigurácia nastavená
+- [x] Firestore databáza vytvorená
+  - ✅ Lokácia: europe-west3 (Frankfurt)
+  - ✅ Mode: Test mode
+  - ✅ Bezpečnostné pravidlá: Vývojový režim
 - [ ] Autentifikácia
-- [ ] Databáza
+  - [ ] Email/Password
+  - [ ] Google Sign-in
 
 ## 📋 Zostávajúce Úlohy
 
@@ -63,6 +69,10 @@
 - Lepšia typová bezpečnosť 
 
 ## 📝 Ďalšie Kroky
-1. Dokončiť Firebase setup
-2. Pridať autentifikáciu
-3. Implementovať databázu 
+1. Nastaviť autentifikáciu:
+   - Povoliť Email/Password
+   - Konfigurovať Google Sign-in
+2. Vytvoriť základné kolekcie:
+   - `users`
+   - `settings`
+3. Implementovať prihlasovanie v React aplikácii 
