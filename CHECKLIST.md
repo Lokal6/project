@@ -28,6 +28,12 @@
   - ✅ Validácia formulárov
   - ✅ Error handling
 
+### 6️⃣ Bezpečnosť [100%]
+- [x] Ochrana obsahu pred neprihlásením
+- [x] Landing page
+- [x] Loading stavy
+- [x] Auth state management
+
 ## 🏗️ V Procese
 
 ### 4️⃣ Užívateľské Dáta [0%]
@@ -44,6 +50,12 @@
 1. Implementovať užívateľské profily
 2. Nastaviť Firebase hosting
 3. Nasadiť produkčnú verziu
+4. Push na GitHub:
+   ```bash
+   git add .
+   git commit -m "feat: add auth protection and landing page"
+   git push origin main
+   ```
 
 ## 🚀 Vylepšenia Oproti Tutoriálu
 - Modernejší tech stack (Vite, TS, SWC)
