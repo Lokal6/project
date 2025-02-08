@@ -8,16 +8,23 @@ import {
   onAuthStateChanged
 } from 'firebase/auth';
 import './Auth.css';
+import { useAuth } from '../../contexts/AuthContext';
 
 type ModalView = 'closed' | 'login' | 'signup';
 
 export const AuthModal = () => {
+  const { user } = useAuth();
   const [view, setView] = useState<ModalView>('closed');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Synchronizujeme isAuthenticated s user stavom
+  useEffect(() => {
+    setIsAuthenticated(!!user);
+  }, [user]);
 
   const handleClose = () => {
     setView('closed');
@@ -63,8 +70,16 @@ export const AuthModal = () => {
       provider.addScope('email');
       provider.addScope('profile');
 
-      // Len nastavíme redirect bez zatvárania modálneho okna
+      // Pridáme custom parametre
+      provider.setCustomParameters({
+        prompt: 'select_account'
+      });
+
+      console.log('Starting Google sign in...');
       await signInWithRedirect(auth, provider);
+      
+      // Nemusíme čakať na výsledok, auth listener sa o to postará
+      console.log('Google sign in redirect initiated');
     } catch (error: any) {
       console.error('Google login error:', error);
       setError('Nastala chyba pri prihlásení cez Google');
@@ -75,12 +90,10 @@ export const AuthModal = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       console.log('Auth state in modal:', user?.email);
-      setIsAuthenticated(!!user);
       if (user) {
-        handleClose(); // Zatvoríme modálne okno ak je užívateľ prihlásený
+        handleClose();
       }
     });
-
     return () => unsubscribe();
   }, []);
 
@@ -88,7 +101,6 @@ export const AuthModal = () => {
   const handleSignOut = async () => {
     try {
       await auth.signOut();
-      setIsAuthenticated(false);
       console.log('User signed out');
     } catch (error) {
       console.error('Sign out error:', error);
@@ -110,7 +122,7 @@ export const AuthModal = () => {
         </button>
       ) : (
         <button className="auth-login-button" onClick={handleSignOut}>
-          Odhlásiť sa ({auth.currentUser?.email})
+          Odhlásiť sa ({user?.email})
         </button>
       )}
 
