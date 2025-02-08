@@ -3,7 +3,7 @@
 
 ---
 
-## 📊 Aktuálny Stav Projektu [90%]
+## 📊 Aktuálny Stav Projektu [95%]
 
 ## ✅ Dokončené Funkcionality
 
@@ -41,6 +41,16 @@
   - ✅ Farebné výstupy
   - ✅ User-friendly rozhranie
 
+### 8️⃣ Deployment [100%]
+- [x] Firebase hosting setup
+- [x] Build optimalizácia
+  - ✅ Minifikácia (esbuild)
+  - ✅ Chunk splitting
+  - ✅ Asset management
+- [x] Produkčné nasadenie
+  - ✅ Live na: https://projekt-9ef39.web.app/
+  - ✅ Automatizovaný deployment script
+
 ## 🏗️ V Procese
 
 ### 4️⃣ Užívateľské Dáta [0%]
@@ -48,25 +58,15 @@
 - [ ] Profily používateľov
 - [ ] Užívateľské nastavenia
 
-### 5️⃣ Deployment [0%]
-- [ ] Firebase hosting setup
-- [ ] Build optimalizácia
-- [ ] Produkčné nasadenie
-
 ## 📝 Ďalšie Kroky
 1. Implementovať užívateľské profily
-2. Nastaviť Firebase hosting
-3. Nasadiť produkčnú verziu
-4. Push na GitHub:
-   ```bash
-   git add .
-   git commit -m "feat: add auth protection and landing page"
-   git push origin main
-   ```
+2. Vylepšiť UX/UI
+3. Pridať ďalšie funkcionality
 
 ## 🚀 Vylepšenia Oproti Tutoriálu
 - Modernejší tech stack (Vite, TS, SWC)
 - Lepšia typová bezpečnosť
 - Vylepšená UX/UI
 - Robustnejšia autentifikácia
-- Automatizované git operácie 
+- Automatizované git operácie
+- Optimalizovaný build a deployment proces 
