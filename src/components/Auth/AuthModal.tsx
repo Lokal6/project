@@ -51,12 +51,25 @@ export const AuthModal = () => {
   };
 
   const handleGoogleLogin = async () => {
-    const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
-      handleClose();
-    } catch (error) {
-      setError('Prihlásenie cez Google zlyhalo');
+      const provider = new GoogleAuthProvider();
+      provider.setCustomParameters({
+        prompt: 'select_account'
+      });
+      
+      const result = await signInWithPopup(auth, provider).catch((error) => {
+        console.error('Popup error:', error);
+        if (error.code === 'auth/popup-closed-by-user') {
+          throw new Error('Prihlásenie bolo zrušené');
+        }
+        throw error;
+      });
+
+      console.log('Login successful:', result.user.email);
+      setView('closed');
+    } catch (error: any) {
+      console.error('Login error:', error);
+      setError(error.message || 'Nastala chyba pri prihlásení');
     }
   };
 

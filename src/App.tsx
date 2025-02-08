@@ -9,9 +9,17 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log('Setting up auth listener...');
     const unsubscribe = auth.onAuthStateChanged((user) => {
+      console.log('Auth state changed:', {
+        isUser: !!user,
+        email: user?.email,
+        uid: user?.uid
+      });
       setUser(user);
       setLoading(false);
+    }, (error) => {
+      console.error('Auth error:', error);
     });
     return () => unsubscribe();
   }, []);
