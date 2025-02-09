@@ -51,40 +51,6 @@
 
 /* Hero sekcia */
 .hero {
-<<<<<<< HEAD
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: gradient 8s ease infinite;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #a0a0a0;
-  margin-bottom: 3rem;
-}
-
-.hero-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 4rem 0;
-}
-
-.feature-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 12px;
-=======
   text-align: center;
   padding: 4rem 2rem;
 }
@@ -141,16 +107,11 @@
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
->>>>>>> 2e6d0fab3a962fb226b6e64f00433ea29d71a3e7
   transition: transform 0.3s;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-<<<<<<< HEAD
-  background: rgba(255, 255, 255, 0.1);
-=======
->>>>>>> 2e6d0fab3a962fb226b6e64f00433ea29d71a3e7
 }
 
 .feature-icon {
@@ -159,7 +120,6 @@
   display: inline-block;
 }
 
-<<<<<<< HEAD
 .feature-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -171,7 +131,6 @@
   line-height: 1.6;
 }
 
-=======
 /* About sekcia */
 .about {
   max-width: 800px;
@@ -419,16 +378,12 @@
   
   .legal-section h2 {
     color: #fff;
->>>>>>> 2e6d0fab3a962fb226b6e64f00433ea29d71a3e7
   }
   
   .legal-section li {
     color: #ccc;
   }
-<<<<<<< HEAD
-=======
 }
->>>>>>> 2e6d0fab3a962fb226b6e64f00433ea29d71a3e7
 
 /* Legal Navigation */
 .legal-nav {
@@ -459,4 +414,127 @@
   .back-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
+}
+
+/* Blocker Page */
+.blocker-page {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 1rem;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.blocker-content {
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-out;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.logo-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logo-large .logo-icon {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.logo-large h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: white;
+  margin: 0;
+}
+
+.blocker-message {
+  color: #a0a0a0;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin: 2rem 0;
+  line-height: 1.5;
+}
+
+.blocker-auth {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Responzívne úpravy */
+@media (max-width: 480px) {
+  .blocker-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+
+  .blocker-auth {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .auth-button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Pre veľmi malé obrazovky */
+@media (max-width: 320px) {
+  .blocker-content {
+    padding: 1rem;
+  }
+
+  .logo-large {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Pre veľké obrazovky */
+@media (min-width: 1200px) {
+  .blocker-content {
+    max-width: 500px;
+    padding: 3rem;
+  }
+}
+
+/* Pre landscape orientáciu na mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  .blocker-page {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .blocker-content {
+    margin: 0 auto;
+  }
+
+  .logo-large {
+    margin-bottom: 1rem;
+  }
+
+  .blocker-message {
+    margin: 1rem 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

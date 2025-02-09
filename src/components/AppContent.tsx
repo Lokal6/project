@@ -2,9 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { AuthModal } from './Auth/AuthModal';
 import { Home } from '../pages/Home';
+import { Blocker } from '../pages/Blocker';
 
 export const AppContent = () => {
-  const { loading } = useAuth();
+  const { user, loading } = useAuth();
 
   if (loading) {
     return (
@@ -12,6 +13,10 @@ export const AppContent = () => {
         <div className="loader"></div>
       </div>
     );
+  }
+
+  if (!user) {
+    return <Blocker />;
   }
 
   return (
