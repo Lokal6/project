@@ -3,6 +3,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { AuthModal } from './Auth/AuthModal';
 import { Home } from '../pages/Home';
 import { Blocker } from '../pages/Blocker';
+import { Coffee } from '../pages/Coffee';
 
 export const AppContent = () => {
   const { user, loading } = useAuth();
@@ -33,7 +34,8 @@ export const AppContent = () => {
 
       <main className="app-main">
         <Routes>
-          <Route path="*" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/coffee" element={<Coffee />} />
         </Routes>
       </main>
 

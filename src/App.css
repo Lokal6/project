@@ -3,13 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-primary);
 }
 
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: system-ui, -apple-system, sans-serif;
 }
 
 /* Header a navigácia */
@@ -58,6 +58,10 @@
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .cta-button {
@@ -489,6 +493,16 @@
   transform: scale(1.05);
 }
 
+/* Štýl pre odhlásenie */
+.auth-button.logout {
+  background: #dc3545;
+}
+
+.auth-button.logout:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
 /* Responzívne úpravy */
 @media (max-width: 480px) {
   .blocker-content {
@@ -551,4 +565,324 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Home Page Styles */
+.home-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container h1 {
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+  color: white;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 1rem 100px;
+}
+
+.coffee-button {
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  border-radius: 30px;
+  background: #6f4e37;
+  color: white;
+  border: none;
+  transition: transform 0.2s, background-color 0.2s;
+  cursor: pointer;
+  transform: scale(1.2);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.coffee-icon {
+  font-size: 1.5rem;
+}
+
+.coffee-button:hover {
+  background: #8b5e3c;
+  transform: scale(1.25);
+}
+
+/* Home button na coffee stránke */
+.auth-button.home {
+  background: #4285f4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.auth-button.home:hover {
+  background: #357abd;
+}
+
+/* Logo container clickable */
+.logo-container {
+  transition: transform 0.2s;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.home-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 1rem;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(0);
+}
+
+.home-footer.hidden {
+  transform: translateY(100%);
+}
+
+.home-footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-footer .footer-section {
+  margin-bottom: 1rem;
+}
+
+.home-footer .footer-section h4 {
+  margin-bottom: 0.5rem;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.home-footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.home-footer a:hover {
+  color: #4285f4;
+}
+
+.home-footer .footer-bottom {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.scroll-indicator.visible {
+  opacity: 0.8;
+}
+
+/* Responzívne úpravy pre mobilné zariadenia */
+@media (max-width: 480px) {
+  /* Header */
+  .home-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo-container .logo-icon {
+    font-size: 1.8rem;
+  }
+
+  .logo-container h1 {
+    font-size: 1.4rem;
+  }
+
+  /* Auth buttons */
+  .auth-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    min-height: 44px; /* Minimálna výška pre dobrú klikateľnosť */
+    min-width: 44px;  /* Minimálna šírka pre dobrú klikateľnosť */
+  }
+
+  /* Coffee button */
+  .coffee-button {
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    transform: scale(1.1); /* Menšie zväčšenie na mobile */
+    gap: 0.6rem;
+  }
+
+  .coffee-icon {
+    font-size: 1.3rem;
+  }
+
+  .coffee-button:hover {
+    transform: scale(1.15);
+  }
+
+  /* Footer */
+  .home-footer {
+    padding: 0.8rem;
+  }
+
+  .home-footer .footer-section h4 {
+    font-size: 1rem;
+  }
+
+  .home-footer a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    display: inline-block; /* Lepšia klikateľná plocha */
+  }
+}
+
+/* Pre veľmi malé obrazovky */
+@media (max-width: 320px) {
+  .logo-container .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .logo-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .coffee-button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Pre landscape orientáciu na mobile */
+@media (max-height: 480px) and (orientation: landscape) {
+  .home-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .home-content {
+    padding: 60px 1rem 80px;
+  }
+
+  .coffee-button {
+    transform: scale(1);
+  }
+
+  .coffee-button:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Základné nastavenie fontov */
+:root {
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-decorative: 'Comic Sans MS', 'Comic Neue', var(--font-primary);
+}
+
+/* Aplikácia fontov */
+* {
+  font-family: var(--font-primary);
+}
+
+.logo-container h1,
+.coffee-button,
+.auth-button,
+.home-footer .footer-section h4 {
+  font-family: var(--font-decorative);
+}
+
+/* Responzívne úpravy pre mobilné zariadenia */
+@media (max-width: 480px) {
+  :root {
+    /* Optimalizované fonty pre mobilné zariadenia */
+    --font-decorative: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  .logo-container h1 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .auth-button,
+  .coffee-button {
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Coffee Page Styles */
+.coffee-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.back-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  font-family: var(--font-decorative);
+  font-size: 1.2rem;
+}
+
+.back-text:hover {
+  opacity: 0.8;
+}
+
+.coffee-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  font-family: var(--font-decorative);
+  font-size: 1.8rem;
+  margin: 0;
 }
