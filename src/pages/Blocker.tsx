@@ -17,12 +17,8 @@ export const Blocker = () => {
       <div className="blocker-content">
         <div className="logo-large">
           <span className="logo-icon">🚀</span>
-          <h1>Cursor AI</h1>
+          <h1>Lokal6</h1>
         </div>
-        
-        <p className="blocker-message">
-          Prosím prihláste sa do Cursor AI
-        </p>
         
         <div className="blocker-auth">
           <AuthModal />

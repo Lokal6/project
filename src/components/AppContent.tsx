@@ -25,7 +25,7 @@ export const AppContent = () => {
         <nav className="nav">
           <div className="logo">
             <span className="logo-icon">🚀</span>
-            <span className="logo-text">Cursor AI</span>
+            <span className="logo-text">Lokal6</span>
           </div>
           <AuthModal />
         </nav>
