@@ -14,10 +14,10 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log('AuthProvider: Setting up auth listener');
+    console.log('Setting up auth listener');
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      console.log('AuthProvider: Auth state changed:', {
-        isUser: !!user,
+      console.log('Auth state changed:', { 
+        isUser: !!user, 
         email: user?.email,
         timestamp: new Date().toISOString()
       });
