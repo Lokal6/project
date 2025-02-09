@@ -2,7 +2,6 @@ export const Home = () => (
   <div className="landing-page">
     <div className="hero">
       <h1>Vitajte v Cursor AI</h1>
-<<<<<<< HEAD
       <p>Jednoduchá a prehľadná webová aplikácia</p>
       
       <div className="hero-features">
@@ -26,10 +25,6 @@ export const Home = () => (
         <button className="cta-button primary">Začať Teraz</button>
         <button className="cta-button secondary">Zistiť Viac</button>
       </div>
-=======
-      <p>Modern React + Firebase Application</p>
-      <button className="cta-button">Get Started</button>
->>>>>>> 2e6d0fab3a962fb226b6e64f00433ea29d71a3e7
     </div>
   </div>
 ); 
