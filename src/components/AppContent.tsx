@@ -3,6 +3,10 @@ import { useAuth } from '../contexts/AuthContext';
 import { AuthModal } from './Auth/AuthModal';
 import { Home } from '../pages/Home';
 import { Dashboard } from '../pages/Dashboard';
+<<<<<<< HEAD
+=======
+import { About } from '../pages/About';
+>>>>>>> 2e6d0fab3a962fb226b6e64f00433ea29d71a3e7
 
 export const AppContent = () => {
   const { user, loading } = useAuth();
@@ -37,6 +41,10 @@ export const AppContent = () => {
         <Routes>
           <Route path="/" element={!user ? <Home /> : <Dashboard />} />
           <Route path="/dashboard" element={user ? <Dashboard /> : <Home />} />
+<<<<<<< HEAD
+=======
+          <Route path="/about" element={<About />} />
+>>>>>>> 2e6d0fab3a962fb226b6e64f00433ea29d71a3e7
         </Routes>
       </main>
 
