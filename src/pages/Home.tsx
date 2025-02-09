@@ -60,7 +60,6 @@ export const Home = () => {
       console.error('Chyba pri odhlásení:', error);
     }
   };
-
   return (
     <div className="blocker-page">
       <header className="home-header">
@@ -92,10 +91,8 @@ export const Home = () => {
             </a>
           </div>
         </div>
-        <div className="footer-bottom">
-          <p>Built with modern web technologies</p>
-        </div>
       </footer>
     </div>
   );
-}; 
+};
+      

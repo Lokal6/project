@@ -317,12 +317,16 @@
 }
 
 .logo-icon {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
-.logo-text {
+.logo-text,
+.back-text,
+.logo-container h1,
+.logo-large h1 {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-family: var(--font-decorative);
+  color: white;
 }
 
 /* Legal Pages */
@@ -520,6 +524,17 @@
     width: 100%;
     max-width: 280px;
   }
+
+  .logo-icon {
+    font-size: 1.3rem;
+  }
+
+  .logo-text,
+  .back-text,
+  .logo-container h1,
+  .logo-large h1 {
+    font-size: 1.3rem;
+  }
 }
 
 /* Pre veľmi malé obrazovky */
@@ -531,6 +546,17 @@
   .logo-large {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .logo-icon {
+    font-size: 1.2rem;
+  }
+
+  .logo-text,
+  .back-text,
+  .logo-container h1,
+  .logo-large h1 {
+    font-size: 1.2rem;
   }
 }
 
@@ -885,4 +911,81 @@
   font-family: var(--font-decorative);
   font-size: 1.8rem;
   margin: 0;
+}
+
+/* Coffee Logout Button */
+.coffee-logout {
+  position: absolute;
+  right: 2rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+}
+
+/* Responzívne úpravy pre mobilné zariadenia */
+@media (max-width: 480px) {
+  .coffee-logout {
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Základné veľkosti ikon a textov */
+.logo-icon,
+.coffee-icon {
+  font-size: 1.5rem;
+}
+
+/* Výnimka pre coffee-button na home page */
+.coffee-button .coffee-icon {
+  font-size: 1.8rem;
+}
+
+/* Zarovnanie v hlavičke */
+.home-header,
+.coffee-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  height: 64px; /* Fixná výška pre konzistenciu */
+}
+
+/* Logo container */
+.logo-container,
+.back-text {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* Názvy */
+.logo-container h1,
+.back-text,
+.coffee-title {
+  font-size: 1.5rem;
+  font-family: var(--font-decorative);
+}
+
+/* Responzívne úpravy */
+@media (max-width: 480px) {
+  .logo-icon,
+  .coffee-icon {
+    font-size: 1.3rem;
+  }
+
+  .coffee-button .coffee-icon {
+    font-size: 1.6rem;
+  }
+
+  .logo-container h1,
+  .back-text,
+  .coffee-title {
+    font-size: 1.3rem;
+  }
+
+  .home-header,
+  .coffee-header {
+    padding: 0.8rem 1rem;
+    height: 56px;
+  }
 }
