@@ -5,11 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-<<<<<<< HEAD
     "build": "node ./node_modules/typescript/bin/tsc -b && vite build",
-=======
-    "build": "tsc -b && vite build",
->>>>>>> 2e6d0fab3a962fb226b6e64f00433ea29d71a3e7
     "lint": "eslint .",
     "preview": "vite preview",
     "git": "\"C:\\Program Files\\Git\\bin\\bash.exe\" ./scripts/git-push.sh",
