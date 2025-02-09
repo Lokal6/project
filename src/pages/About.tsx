@@ -1,6 +1,7 @@
+import { PageLayout } from '../components/Layout/PageLayout';
+
 export const About = () => (
-  <div className="about">
-    <h2>About Project</h2>
+  <PageLayout title="O nás">
     <div className="about-content">
       <p>Built with modern web technologies for optimal performance and developer experience.</p>
       <div className="tech-stack">
@@ -10,5 +11,5 @@ export const About = () => (
         <span className="tech-badge">Firebase</span>
       </div>
     </div>
-  </div>
+  </PageLayout>
 ); 

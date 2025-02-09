@@ -1,13 +1,7 @@
-import { Link } from 'react-router-dom';
+import { PageLayout } from '../components/Layout/PageLayout';
 
 export const Terms = () => (
-  <div className="legal-page">
-    <nav className="legal-nav">
-      <Link to="/" className="back-link">← Späť na hlavnú stránku</Link>
-    </nav>
-    
-    <h1>Podmienky používania</h1>
-
+  <PageLayout title="Podmienky používania">
     <section className="legal-section">
       <h2>1. Všeobecné ustanovenia</h2>
       <p>Používaním našich služieb súhlasíte s týmito podmienkami. Prosím, prečítajte si ich pozorne.</p>
@@ -63,10 +57,5 @@ export const Terms = () => (
         <li>Zmeniť podmienky</li>
       </ul>
     </section>
-
-    <footer className="legal-footer">
-      <p>Posledná aktualizácia: {new Date().toLocaleDateString()}</p>
-      <p>Kontakt: tomulec.peter@gmail.com</p>
-    </footer>
-  </div>
+  </PageLayout>
 );

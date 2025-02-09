@@ -1,13 +1,7 @@
-import { Link } from 'react-router-dom';
+import { PageLayout } from '../components/Layout/PageLayout';
 
 export const Privacy = () => (
-  <div className="legal-page">
-    <nav className="legal-nav">
-      <Link to="/" className="back-link">← Späť na hlavnú stránku</Link>
-    </nav>
-    
-    <h1>Zásady ochrany súkromia</h1>
-    
+  <PageLayout title="Zásady ochrany súkromia">
     <section className="legal-section">
       <h2>1. Zber údajov</h2>
       <p>Zbierame nasledujúce údaje:</p>
@@ -68,11 +62,5 @@ export const Privacy = () => (
         <li>Telefón: +421 XXX XXX XXX</li>
       </ul>
     </section>
-
-    <footer className="legal-footer">
-      <p>Posledná aktualizácia: {new Date().toLocaleDateString()}</p>
-      <p>Kontakt: tomulec.peter@gmail.com</p>
-    </footer>
-  </div>
-
+  </PageLayout>
 ); 
