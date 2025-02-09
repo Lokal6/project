@@ -20,12 +20,6 @@ export const Blocker = () => {
           <h1>Cursor AI</h1>
         </div>
         
-        <img 
-          src="/blocker-image.svg" 
-          alt="Login Required" 
-          className="blocker-image"
-        />
-        
         <p className="blocker-message">
           Prosím prihláste sa do Cursor AI
         </p>
