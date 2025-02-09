@@ -423,7 +423,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  background: #000000; /* Tmavo čierne pozadie */
   padding: 1rem;
   overflow-x: hidden;
   position: fixed;
@@ -438,10 +438,6 @@
   width: 90%;
   max-width: 400px;
   animation: fadeIn 0.5s ease-out;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
 }
 
 .logo-large {
@@ -460,6 +456,7 @@
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   color: white;
   margin: 0;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive; /* Bublinkový font */
 }
 
 .blocker-message {
@@ -473,6 +470,23 @@
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+}
+
+/* Upravený štýl pre Google tlačidlo */
+.auth-button.google {
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  background: #4285f4;
+  color: white;
+  border: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.auth-button.google:hover {
+  background: #357abd;
+  transform: scale(1.05);
 }
 
 /* Responzívne úpravy */
