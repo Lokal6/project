@@ -9,6 +9,7 @@ import {
 } from 'firebase/auth';
 import './Auth.css';
 import { useAuth } from '../../contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 type ModalView = 'closed' | 'login' | 'signup';
 
@@ -134,7 +135,14 @@ export const AuthModal = () => {
             <div className="modal-header">
               <h1>{isRegistering ? 'Registrácia' : 'Prihlásenie'}</h1>
               <p className="modal-tos">
-                Pokračovaním súhlasíte s našimi <a href="/terms">Podmienkami používania</a> a potvrdzujete, že rozumiete našim <a href="/privacy">Zásadám ochrany súkromia</a>
+                Pokračovaním súhlasíte s našimi{' '}
+                <Link to="/terms" onClick={(e) => e.stopPropagation()}>
+                  Podmienkami používania
+                </Link>{' '}
+                a potvrdzujete, že rozumiete našim{' '}
+                <Link to="/privacy" onClick={(e) => e.stopPropagation()}>
+                  Zásadám ochrany súkromia
+                </Link>
               </p>
             </div>
 

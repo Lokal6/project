@@ -45,6 +45,11 @@ export const AppContent = () => {
       <footer className="app-footer">
         <div className="footer-content">
           <div className="footer-section">
+            <h4>Právne informácie</h4>
+            <Link to="/privacy">Ochrana súkromia</Link>
+            <Link to="/terms">Podmienky používania</Link>
+          </div>
+          <div className="footer-section">
             <h4>Links</h4>
             {user && <Link to="/dashboard">Dashboard</Link>}
             <Link to="/about">About</Link>

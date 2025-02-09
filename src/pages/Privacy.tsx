@@ -1,9 +1,78 @@
-const Privacy = () => (
-  <div className="legal-page">
-    <h1>Zásady ochrany súkromia</h1>
-    <p>Ochrana vašich osobných údajov je pre nás dôležitá.</p>
-    {/* Pridať viac obsahu */}
-  </div>
-);
+import { Link } from 'react-router-dom';
 
-export { Privacy }; 
+export const Privacy = () => (
+  <div className="legal-page">
+    <nav className="legal-nav">
+      <Link to="/" className="back-link">← Späť na hlavnú stránku</Link>
+    </nav>
+    
+    <h1>Zásady ochrany súkromia</h1>
+    
+    <section className="legal-section">
+      <h2>1. Zber údajov</h2>
+      <p>Zbierame nasledujúce údaje:</p>
+      <ul>
+        <li>Email (pre účely autentifikácie)</li>
+        <li>Meno a priezvisko (voliteľné)</li>
+        <li>Údaje o prihlásení (čas, IP adresa)</li>
+      </ul>
+    </section>
+
+    <section className="legal-section">
+      <h2>2. Použitie údajov</h2>
+      <p>Vaše údaje používame na:</p>
+      <ul>
+        <li>Poskytovanie našich služieb</li>
+        <li>Zlepšovanie používateľského zážitku</li>
+        <li>Komunikáciu s vami</li>
+      </ul>
+    </section>
+
+    <section className="legal-section">
+      <h2>3. Ochrana údajov</h2>
+      <p>Vaše údaje chránime pomocou:</p>
+      <ul>
+        <li>Šifrovania (SSL/TLS)</li>
+        <li>Bezpečného uloženia (Firebase)</li>
+        <li>Pravidelných bezpečnostných auditov</li>
+      </ul>
+    </section>
+
+    <section className="legal-section">
+      <h2>4. Cookies</h2>
+      <p>Používame cookies na:</p>
+      <ul>
+        <li>Autentifikáciu</li>
+        <li>Zapamätanie preferencií</li>
+        <li>Analytické účely</li>
+      </ul>
+    </section>
+
+    <section className="legal-section">
+      <h2>5. Vaše práva</h2>
+      <p>Máte právo na:</p>
+      <ul>
+        <li>Prístup k vašim údajom</li>
+        <li>Opravu údajov</li>
+        <li>Vymazanie údajov</li>
+        <li>Obmedzenie spracovania</li>
+      </ul>
+    </section>
+
+    <section className="legal-section">
+      <h2>6. Kontakt</h2>
+      <p>Pre otázky ohľadom ochrany súkromia nás kontaktujte:</p>
+      <ul>
+        <li>Email: tomulec.peter@gmail.com</li>
+        <li>Adresa: Cursor AI, s.r.o.</li>
+        <li>Telefón: +421 XXX XXX XXX</li>
+      </ul>
+    </section>
+
+    <footer className="legal-footer">
+      <p>Posledná aktualizácia: {new Date().toLocaleDateString()}</p>
+      <p>Kontakt: tomulec.peter@gmail.com</p>
+    </footer>
+  </div>
+
+); 
