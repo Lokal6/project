@@ -335,3 +335,63 @@
 .auth-close {
   right: 1rem;
 }
+
+/* Nové štýly pre užívateľský profil */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.user-email {
+  font-size: 14px;
+  color: #3c4043;
+  font-weight: 500;
+}
+
+.auth-button {
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #dadce0;
+  background: white;
+  color: #3c4043;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-button:hover {
+  background-color: #f8f9fa;
+}
+
+.auth-button.logout {
+  margin-left: 8px;
+  border-color: #dadce0;
+}
+
+/* Responzívne nastavenia */
+@media screen and (max-width: 480px) {
+  .auth-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .user-profile {
+    justify-content: center;
+  }
+  
+  .auth-button.logout {
+    margin-left: 0;
+  }
+}
